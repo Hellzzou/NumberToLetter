@@ -5,17 +5,19 @@ function numberInLetter(numberToTransform){
 	const hundred = ( numberToTransform - ( ten * 10 ) - unit) / 100;
 	let numberTransformed = '';
 
-	if ( hundred == 0 && ten == 0){																									// Affiche les unités si les centaines et les dizaines sont nulles
+	if ( hundred == 0 && ten == 0){	
+		// Affiche les unités si les centaines et les dizaines sont nulles																								
 		numberTransformed += numberArray[unit][0];
 	}else {
+		// Affiche les centaines
 		numberTransformed += hundredInLetters(hundred);
-
-		if ( hundred != 0 && ten != 0 ) numberTransformed += '-';																	// Affiche un tiret entre les centaines et les dizaines si elles ne sont pas nulles
-
-		numberTransformed += numberArray[ten][2];																					// Affiche la dizaine 
-
-		if (ten != 0 && ten != 1 && ten != 8 && ten != 9 && unit == 1) numberTransformed += '-et';									// Ajoute un 'et' si l'unité est 1 et que nous somme pas dans un cas spéciale donc se finissant par 11,12 ...
-
+		// Affiche un tiret entre les centaines et les dizaines si elles ne sont pas nulles
+		if ( hundred != 0 && ten != 0 ) numberTransformed += '-';																	
+		// Affiche la dizaine
+		numberTransformed += numberArray[ten][2];																					 
+		// Ajoute un 'et' si l'unité est 1 et que nous somme pas dans un cas spéciale donc se finissant par 11,12 ...
+		if (ten != 0 && ten != 1 && ten != 8 && ten != 9 && unit == 1) numberTransformed += '-et';									
+		// Affiche les unités
 		numberTransformed += unitInLetters(ten,unit);
 
 	}
@@ -33,9 +35,9 @@ function hundredInLetters(hundred){
 
 function unitInLetters(ten,unit){
 	if ( ten == 1 || ten == 7 || ten == 9) {
-		return numberArray[unit][1];																				// Affiche les dizaines spéciales 11,12,72,etc....
+		return numberArray[unit][1];																				
 			} else {								
-		return '-' + numberArray[unit][0];																		// Affiche les unités normales donc si nous ne somme pas dans les cas speciaux d'au dessus
+		return '-' + numberArray[unit][0];																		
 	}
 }
 
