@@ -27,13 +27,10 @@ function numberInLetter(numberToTransform){
 	const ten = ( numberToTransform % 100 - unit ) / 10;
 	const hundred = ( numberToTransform - ( ten * 10 ) - unit) / 100;
 
-	// Affiche les centaines
 	hundredInLetters(hundred);																
-	// Affiche la dizaine
 	tenInLetters(ten);																				 
 	// Ajoute un 'et' si l'unité est 1 et que nous somme pas dans un cas spéciale donc se finissant par 11,12 ...
 	if ( ten != 0 && ten != 1 && ten != 8 && ten != 9 && unit == 1 ) numberTransformed.push('et');						
-	// Affiche les unités
 	unitInLetters(hundred,ten,unit);
 
 	return numberTransformed.join('-');
@@ -52,7 +49,7 @@ let numberArray = [['zéro','dix',''],
 				   ['huit','dix-huit','quatre-vingt'],
 				   ['neuf','dix-neuf','quatre-vingt']];
 do {
-	numberToTransform = parseInt(prompt('Entrez un  nombre entre 0 et 999'));
+	numberToTransform = parseInt(prompt('Entrez un  nombre entre 0 et 999'), 10);
 }
 while ( isNaN(numberToTransform || numberToTransform < 0 || numberToTransform > 999));
 
