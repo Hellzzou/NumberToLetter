@@ -1,3 +1,20 @@
+function hundredInLetters(hundred){
+	if ( hundred > 1) {
+		return numberArray[hundred][0] + '-cent';
+	}else if (hundred == 1 ) {
+		return 'cent';
+	}
+	return'';
+}
+
+function unitInLetters(ten,unit){
+	if ( ten == 1 || ten == 7 || ten == 9) {
+		return numberArray[unit][1];																				
+			} else {								
+		return '-' + numberArray[unit][0];																		
+	}
+}
+
 function numberInLetter(numberToTransform){
 
 	const unit = numberToTransform % 10;
@@ -22,23 +39,6 @@ function numberInLetter(numberToTransform){
 
 	}
 	return numberTransformed;
-}
-
-function hundredInLetters(hundred){
-	if ( hundred > 1) {
-		return numberArray[hundred][0] + '-cent';
-	}else if (hundred == 1 ) {
-		return 'cent';
-	}
-	return'';
-}
-
-function unitInLetters(ten,unit){
-	if ( ten == 1 || ten == 7 || ten == 9) {
-		return numberArray[unit][1];																				
-			} else {								
-		return '-' + numberArray[unit][0];																		
-	}
 }
 
 let numberToTransform = '' ;
