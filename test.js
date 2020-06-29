@@ -38,9 +38,9 @@ function numberInLetter(numberToTransform){
 
 let numberToTransform = '';
 let numberTransformed = [];
-let numberArray = [['zéro','dix',''],					
-				   ['un','onze',''],							
-				   ['deux','douze','vingt'],							
+let numberArray = [['zéro','dix',''],
+				   ['un','onze',''],
+				   ['deux','douze','vingt'],
 				   ['trois','treize','trente'],
 				   ['quatre','quatorze','quarante'],
 				   ['cinq','quinze','cinquante'],
