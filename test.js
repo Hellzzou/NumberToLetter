@@ -1,9 +1,14 @@
-function hundredInLetters(hundred){
-	if ( hundred >= 1) {
-		if ( hundred != 1){
-			numberTransformed.push(numberArray[hundred][0]);
-		}
-		numberTransformed.push('cent');
+function thousandInLetters(thousand){
+	if ( thousand >= 1 ){
+		if ( thousand == 1) numberTransformed.push(numberArray[thousand][0]);
+		numberTransformed.push('mille');
+	}
+}
+
+function hundredThousandInLetters(number,choice){
+	if ( hundred >= 1 ) {
+		if ( hundred != 1 ) numberTransformed.push(numberArray[hundred][0]);
+		numberTransformed.push(choice);
 	}
 }
 
