@@ -48,13 +48,13 @@ function numberInLetter(numberToTransform) {
   const h = hundredInLetters(hundred);
   const t = tenInLetters(ten);
   // Ajoute un 'et' si l'unité est 1 et que nous somme pas dans un cas spéciale donc se finissant par 11,12 ...
-  let part = "";
+  let part;
   if (ten != 0 && ten != 1 && ten != 8 && ten != 9 && unit == 1) {
     part = "et";
   }
   const u = unitInLetters(hundred, ten, unit);
 
-  return [...h, ...t, part, ...u].join("-");
+  return [...h, ...t, part, ...u].filter(Boolean).join("-");
 }
 
 let numberToTransform = "";
