@@ -49,31 +49,31 @@ function numbersInLetters(stringToTransform) {
     if (stringToTransform.length - arrayToTransform.length + i >= 0 ) arrayToTransform[i] = stringToTransform[stringToTransform.length - arrayToTransform.length + i]; 
   }
 
-  const hundredMi = hundredInLetters(arrayToTransform[arrayToTransform.length - 9]);
-  const tenMi = tenInLetters(arrayToTransform[arrayToTransform.length - 8]);
+  const hundredMilion = hundredInLetters(arrayToTransform[arrayToTransform.length - 9]);
+  const tenMilion = tenInLetters(arrayToTransform[arrayToTransform.length - 8]);
   // Ajoute un 'et' si l'unité est 1 et que nous somme pas dans un cas spéciale donc se finissant par 11,12 ...
-  let part1;
-  if (arrayToTransform[arrayToTransform.length - 9] > 1 && arrayToTransform[arrayToTransform.length - 8] < 8 && arrayToTransform[arrayToTransform.length - 7] == 1) part1 = "et";
-  const mi = unitInLetters(arrayToTransform[arrayToTransform.length - 9], arrayToTransform[arrayToTransform.length - 8], arrayToTransform[arrayToTransform.length - 7],'milion');
+  let andMilion;
+  if (arrayToTransform[arrayToTransform.length - 9] > 1 && arrayToTransform[arrayToTransform.length - 8] < 8 && arrayToTransform[arrayToTransform.length - 7] == 1) andMilion = "et";
+  const milion = unitInLetters(arrayToTransform[arrayToTransform.length - 9], arrayToTransform[arrayToTransform.length - 8], arrayToTransform[arrayToTransform.length - 7],'milion');
   let million;
   if (arrayToTransform[arrayToTransform.length - 9] > 0 || arrayToTransform[arrayToTransform.length - 8] > 0 || arrayToTransform[arrayToTransform.length - 7] > 0 ) million = 'million';
 
-  const hundredTh = hundredInLetters(arrayToTransform[arrayToTransform.length - 6]);
-  const tenTh = tenInLetters(arrayToTransform[arrayToTransform.length - 5]);
+  const hundredThousand = hundredInLetters(arrayToTransform[arrayToTransform.length - 6]);
+  const tenThousand = tenInLetters(arrayToTransform[arrayToTransform.length - 5]);
   // Ajoute un 'et' si l'unité est 1 et que nous somme pas dans un cas spéciale donc se finissant par 11,12 ...
-  let part2;
-  if (arrayToTransform[arrayToTransform.length - 6] > 1 && arrayToTransform[arrayToTransform.length - 5] < 8 && arrayToTransform[arrayToTransform.length - 4] == 1) part2 = "et";
-  const th = unitInLetters(arrayToTransform[arrayToTransform.length - 6], arrayToTransform[arrayToTransform.length - 5], arrayToTransform[arrayToTransform.length - 4],'thousand');  
+  let andThousand;
+  if (arrayToTransform[arrayToTransform.length - 6] > 1 && arrayToTransform[arrayToTransform.length - 5] < 8 && arrayToTransform[arrayToTransform.length - 4] == 1) andThousand = "et";
+  const thousand = unitInLetters(arrayToTransform[arrayToTransform.length - 6], arrayToTransform[arrayToTransform.length - 5], arrayToTransform[arrayToTransform.length - 4],'thousand');  
   let mille;
   if (arrayToTransform[arrayToTransform.length - 6] > 0 || arrayToTransform[arrayToTransform.length - 5] > 0 || arrayToTransform[arrayToTransform.length - 4] > 0 ) mille = 'mille';
 
-  const h = hundredInLetters(arrayToTransform[arrayToTransform.length - 3]);
-  const t = tenInLetters(arrayToTransform[arrayToTransform.length - 2]);
+  const hundred = hundredInLetters(arrayToTransform[arrayToTransform.length - 3]);
+  const ten = tenInLetters(arrayToTransform[arrayToTransform.length - 2]);
   // Ajoute un 'et' si l'unité est 1 et que nous somme pas dans un cas spéciale donc se finissant par 11,12 ...
-  let part3;
-  if (arrayToTransform[arrayToTransform.length - 2] > 1 && arrayToTransform[arrayToTransform.length - 2] < 8 && arrayToTransform[arrayToTransform.length - 1] == 1) part3 = "et";  
-  const u = unitInLetters(arrayToTransform[arrayToTransform.length - 3], arrayToTransform[arrayToTransform.length - 2], arrayToTransform[arrayToTransform.length - 1],'unit');
-  return [...hundredMi,...tenMi,part1,...mi,million,...hundredTh,...tenTh,part2,...th,mille,...h, ...t, part3, ...u].filter(Boolean).join("-");
+  let andUnit;
+  if (arrayToTransform[arrayToTransform.length - 2] > 1 && arrayToTransform[arrayToTransform.length - 2] < 8 && arrayToTransform[arrayToTransform.length - 1] == 1) andUnit = "et";  
+  const unit = unitInLetters(arrayToTransform[arrayToTransform.length - 3], arrayToTransform[arrayToTransform.length - 2], arrayToTransform[arrayToTransform.length - 1],'unit');
+  return [...hundredMilion,...tenMilion,andMilion,...milion,million,...hundredThousand,...tenThousand,andThousand,...thousand,mille,...hundred, ...ten, andUnit, ...unit].filter(Boolean).join("-");
 }
 
 let numberToTransform = "";
