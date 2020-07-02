@@ -97,9 +97,8 @@ let numberToTransform = "";
 let stringToTransform = [];
 
 do {
-  stringToTransform = prompt("Entrez un  nombre entre 0 et 999 999 999").split('');
+  stringToTransform = prompt("Entrez un  nombre entre 0 et 999 999 999");
   numberToTransform = parseInt(stringToTransform, 10);
+}while (isNaN(numberToTransform) || numberToTransform < 0 || numberToTransform > 999999999);
 
-} while (isNaN(numberToTransform || numberToTransform < 0 || numberToTransform > 999999999));
-
-alert(numbersInLetters(stringToTransform));
+alert(numbersInLetters(stringToTransform.split('')));
